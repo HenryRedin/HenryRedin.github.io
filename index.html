@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naruto Demo - El Mundo Ninja</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-black text-white overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-gray-900 bg-opacity-95 backdrop-blur-sm">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-fire text-orange-500 text-2xl"></i>
+                    <span class="font-bold text-xl naruto-font">NARUTO DEMO</span>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#inicio" class="hover:text-orange-500 transition-colors ninja-link">Inicio</a>
+                    <a href="#personajes" class="hover:text-orange-500 transition-colors ninja-link">Personajes</a>
+                    <a href="#tecnicas" class="hover:text-orange-500 transition-colors ninja-link">Técnicas</a>
+                    <a href="#aldeas" class="hover:text-orange-500 transition-colors ninja-link">Aldeas</a>
+                </div>
+                <button class="md:hidden text-white" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div class="md:hidden mt-4 hidden" id="mobile-menu">
+                <a href="#inicio" class="block py-2 hover:text-orange-500 transition-colors">Inicio</a>
+                <a href="#personajes" class="block py-2 hover:text-orange-500 transition-colors">Personajes</a>
+                <a href="#tecnicas" class="block py-2 hover:text-orange-500 transition-colors">Técnicas</a>
+                <a href="#aldeas" class="block py-2 hover:text-orange-500 transition-colors">Aldeas</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="min-h-screen flex items-center justify-center relative hero-section">
+        <div class="absolute inset-0 bg-gradient-to-r from-orange-900 to-blue-900 opacity-80"></div>
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+            <div class="mb-8 animate-pulse-slow">
+                <i class="fas fa-fire text-8xl text-orange-500 mb-4"></i>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-black mb-6 naruto-title glow-text">
+                EL MUNDO NINJA
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 text-gray-200 font-light">
+                Descubre el universo de Naruto, donde los ninja forjan su destino
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="ninja-button bg-orange-600 hover:bg-orange-700 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105">
+                    <i class="fas fa-play mr-2"></i> Comenzar Aventura
+                </button>
+                <button class="ninja-button bg-blue-600 hover:bg-blue-700 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105">
+                    <i class="fas fa-users mr-2"></i> Ver Personajes
+                </button>
+            </div>
+        </div>
+        
+        <!-- Floating ninja stars -->
+        <div class="ninja-stars">
+            <div class="star star-1">⭐</div>
+            <div class="star star-2">🌟</div>
+            <div class="star star-3">⭐</div>
+            <div class="star star-4">🌟</div>
+        </div>
+    </section>
+
+    <!-- Characters Section -->
+    <section id="personajes" class="py-20 bg-gradient-to-b from-gray-900 to-black">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-6xl font-bold text-center mb-16 naruto-title">
+                <i class="fas fa-users text-orange-500 mr-4"></i>
+                PERSONAJES PRINCIPALES
+            </h2>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Naruto -->
+                <div class="character-card bg-gray-800 rounded-xl p-6 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/20">
+                    <div class="text-center mb-6">
+                        <div class="w-32 h-32 mx-auto mb-4 bg-orange-500 rounded-full flex items-center justify-center text-4xl">
+                            🦊
+                        </div>
+                        <h3 class="text-2xl font-bold text-orange-500 mb-2">NARUTO UZUMAKI</h3>
+                        <span class="inline-block bg-orange-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Hokage</span>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Aldea:</span>
+                            <span class="text-orange-500 font-semibold">Konoha</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Técnica:</span>
+                            <span class="text-blue-400 font-semibold">Rasengan</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Bestia:</span>
+                            <span class="text-red-500 font-semibold">Kurama</span>
+                        </div>
+                    </div>
+                    <div class="mt-4 bg-gray-700 rounded-lg p-3">
+                        <p class="text-sm text-gray-300 italic">"¡Nunca me rindo! ¡Ese es mi camino ninja!"</p>
+                    </div>
+                </div>
+
+                <!-- Sasuke -->
+                <div class="character-card bg-gray-800 rounded-xl p-6 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20">
+                    <div class="text-center mb-6">
+                        <div class="w-32 h-32 mx-auto mb-4 bg-blue-600 rounded-full flex items-center justify-center text-4xl">
+                            ⚡
+                        </div>
+                        <h3 class="text-2xl font-bold text-blue-500 mb-2">SASUKE UCHIHA</h3>
+                        <span class="inline-block bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Vengador</span>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Clan:</span>
+                            <span class="text-blue-500 font-semibold">Uchiha</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Técnica:</span>
+                            <span class="text-purple-400 font-semibold">Chidori</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Sharingan:</span>
+                            <span class="text-red-500 font-semibold">Eterno</span>
+                        </div>
+                    </div>
+                    <div class="mt-4 bg-gray-700 rounded-lg p-3">
+                        <p class="text-sm text-gray-300 italic">"El poder es lo único que importa en este mundo."</p>
+                    </div>
+                </div>
+
+                <!-- Sakura -->
+                <div class="character-card bg-gray-800 rounded-xl p-6 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-pink-500/20">
+                    <div class="text-center mb-6">
+                        <div class="w-32 h-32 mx-auto mb-4 bg-pink-500 rounded-full flex items-center justify-center text-4xl">
+                            🌸
+                        </div>
+                        <h3 class="text-2xl font-bold text-pink-500 mb-2">SAKURA HARUNO</h3>
+                        <span class="inline-block bg-pink-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Médico Ninja</span>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Especialidad:</span>
+                            <span class="text-green-500 font-semibold">Médico</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Técnica:</span>
+                            <span class="text-green-400 font-semibold">Ninjutsu Médico</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Fuerza:</span>
+                            <span class="text-red-500 font-semibold">Monstruosa</span>
+                        </div>
+                    </div>
+                    <div class="mt-4 bg-gray-700 rounded-lg p-3">
+                        <p class="text-sm text-gray-300 italic">"¡No me quedo atrás de ustedes dos!"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Techniques Section -->
+    <section id="tecnicas" class="py-20 bg-gradient-to-b from-black to-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-6xl font-bold text-center mb-16 naruto-title">
+                <i class="fas fa-magic text-blue-500 mr-4"></i>
+                TÉCNICAS NINJA
+            </h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Rasengan -->
+                <div class="technique-card bg-gradient-to-br from-blue-900 to-blue-700 rounded-xl p-6 hover:shadow-2xl hover:shadow-blue-500/30 transition-all duration-300">
+                    <div class="text-center mb-4">
+                        <div class="w-24 h-24 mx-auto mb-4 bg-blue-500 rounded-full flex items-center justify-center text-3xl animate-spin-slow">
+                            🌀
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-300">RASENGAN</h3>
+                    </div>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-gray-300">Tipo:</span>
+                            <span class="text-blue-400">Ninjutsu</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-300">Rango:</span>
+                            <span class="text-yellow-400">A</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-300">Creador:</span>
+                            <span class="text-orange-400">Minato</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chidori -->
+                <div class="technique-card bg-gradient-to-br from-purple-900 to-purple-700 rounded-xl p-6 hover:shadow-2xl hover:shadow-purple-500/30 transition-all duration-300">
+                    <div class="text-center mb-4">
+                        <div class="w-24 h-24 mx-auto mb-4 bg-purple-500 rounded-full flex items-center justify-center text-3xl animate-pulse">
+                            ⚡
+                        </div>
+                        <h3 class="text-xl font-bold text-purple-300">CHIDORI</h3>
+                    </div>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-gray-300">Tipo:</span>
+                            <span class="text-purple-400">Ninjutsu</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-300">Rango:</span>
+                            <span class="text-yellow-400">A</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-300">Creador:</span>
+                            <span class="text-blue-400">Kakashi</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kage Bunshin -->
+                <div class="technique-card bg-gradient-to-br from-gray-800 to-gray-600 rounded-xl p-6 hover:shadow-2xl hover:shadow-gray-500/30 transition-all duration-300">
+                    <div class="text-center mb-4">
+                        <div class="w-24 h-24 mx-auto mb-4 bg-gray-500 rounded-full flex items-center justify-center text-3xl">
+                            👥
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-300">KAGE BUNSHIN</h3>
+                    </div>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-gray-300">Tipo:</span>
+                            <span class="text-gray-400">Ninjutsu</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-300">Rango:</span>
+                            <span class="text-yellow-400">B</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-300">Especialidad:</span>
+                            <span class="text-orange-400">Clones</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Amaterasu -->
+                <div class="technique-card bg-gradient-to-br from-red-900 to-black rounded-xl p-6 hover:shadow-2xl hover:shadow-red-500/30 transition-all duration-300">
+                    <div class="text-center mb-4">
+                        <div class="w-24 h-24 mx-auto mb-4 bg-red-600 rounded-full flex items-center justify-center text-3xl animate-bounce-slow">
+                            🔥
+                        </div>
+                        <h3 class="text-xl font-bold text-red-300">AMATERASU</h3>
+                    </div>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-gray-300">Tipo:</span>
+                            <span class="text-red-400">Dojutsu</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-300">Rango:</span>
+                            <span class="text-yellow-400">S</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-300">Requisito:</span>
+                            <span class="text-red-500">Sharingan</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Byakugan -->
+                <div class="technique-card bg-gradient-to-br from-indigo-900 to-indigo-700 rounded-xl p-6 hover:shadow-2xl hover:shadow-indigo-500/30 transition-all duration-300">
+                    <div class="text-center mb-4">
+                        <div class="w-24 h-24 mx-auto mb-4 bg-indigo-500 rounded-full flex items-center justify-center text-3xl">
+                            👁️
+                        </div>
+                        <h3 class="text-xl font-bold text-indigo-300">BYAKUGAN</h3>
+                    </div>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-gray-300">Tipo:</span>
+                            <span class="text-indigo-400">Dojutsu</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-300">Clan:</span>
+                            <span class="text-indigo-400">Hyuga</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-300">Visión:</span>
+                            <span class="text-green-400">360°</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Susanoo -->
+                <div class="technique-card bg-gradient-to-br from-yellow-900 to-yellow-700 rounded-xl p-6 hover:shadow-2xl hover:shadow-yellow-500/30 transition-all duration-300">
+                    <div class="text-center mb-4">
+                        <div class="w-24 h-24 mx-auto mb-4 bg-yellow-500 rounded-full flex items-center justify-center text-3xl">
+                            🛡️
+                        </div>
+                        <h3 class="text-xl font-bold text-yellow-300">SUSANOO</h3>
+                    </div>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-gray-300">Tipo:</span>
+                            <span class="text-yellow-400">Dojutsu</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-300">Rango:</span>
+                            <span class="text-yellow-400">S</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-300">Requisito:</span>
+                            <span class="text-red-500">Sharingan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Villages Section -->
+    <section id="aldeas" class="py-20 bg-gradient-to-b from-gray-900 to-black">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-6xl font-bold text-center mb-16 naruto-title">
+                <i class="fas fa-home text-green-500 mr-4"></i>
+                ALDEAS NINJA
+            </h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Konoha -->
+                <div class="village-card bg-gradient-to-br from-green-900 to-green-700 rounded-xl p-6 hover:shadow-2xl hover:shadow-green-500/30 transition-all duration-300">
+                    <div class="text-center mb-6">
+                        <div class="w-32 h-32 mx-auto mb-4 bg-green-500 rounded-full flex items-center justify-center text-4xl">
+                            🍃
+                        </div>
+                        <h3 class="text-2xl font-bold text-green-300">KONOHA</h3>
+                        <p class="text-green-400 text-sm">Aldea Oculta de la Hoja</p>
+                    </div>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-gray-300">País:</span>
+                            <span class="text-green-400">Fuego</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-300">Hokage:</span>
+                            <span class="text-orange-400">Naruto</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-300">Símbolo:</span>
+                            <span class="text-green-500">🍃 Hoja</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Suna -->
+                <div class="village-card bg-gradient-to-br from-yellow-900 to-yellow-600 rounded-xl p-6 hover:shadow-2xl hover:shadow-yellow-500/30 transition-all duration-300">
+                    <div class="text-center mb-6">
+                        <div class="w-32 h-32 mx-auto mb-4 bg-yellow-500 rounded-full flex items-center justify-center text-4xl">
+                            🏜️
+                        </div>
+                        <h3 class="text-2xl font-bold text-yellow-300">SUNA</h3>
+                        <p class="text-yellow-400 text-sm">Aldea Oculta de la Arena</p>
+                    </div>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-gray-300">País:</span>
+                            <span class="text-yellow-400">Viento</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-300">Kazekage:</span>
+                            <span class="text-red-400">Gaara</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-300">Símbolo:</span>
+                            <span class="text-yellow-500">🏜️ Arena</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kiri -->
+                <div class="village-card bg-gradient-to-br from-blue-900 to-blue-700 rounded-xl p-6 hover:shadow-2xl hover:shadow-blue-500/30 transition-all duration-300">
+                    <div class="text-center mb-6">
+                        <div class="w-32 h-32 mx-auto mb-4 bg-blue-500 rounded-full flex items-center justify-center text-4xl">
+                            🌊
+                        </div>
+                        <h3 class="text-2xl font-bold text-blue-300">KIRI</h3>
+                        <p class="text-blue-400 text-sm">Aldea Oculta de la Niebla</p>
+                    </div>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-gray-300">País:</span>
+                            <span class="text-blue-400">Agua</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-300">Mizukage:</span>
+                            <span class="text-blue-400">Mei</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-300">Símbolo:</span>
+                            <span class="text-blue-500">🌊 Niebla</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-gray-800">
+        <div class="container mx-auto px-4 text-center">
+            <div class="mb-6">
+                <i class="fas fa-fire text-orange-500 text-4xl mb-4"></i>
+                <h3 class="text-2xl font-bold text-white naruto-font">NARUTO DEMO</h3>
+                <p class="text-gray-400 mt-2">El mundo ninja te espera</p>
+            </div>
+            
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="#" class="text-gray-400 hover:text-orange-500 transition-colors">
+                    <i class="fab fa-twitter text-2xl"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-orange-500 transition-colors">
+                    <i class="fab fa-instagram text-2xl"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-orange-500 transition-colors">
+                    <i class="fab fa-youtube text-2xl"></i>
+                </a>
+            </div>
+            
+            <div class="text-gray-500 text-sm">
+                <p>&copy; 2024 Naruto Demo. Creado con 💙 para los fans del anime.</p>
+                <p class="mt-2">Este es un proyecto demo sin fines comerciales.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
