@@ -1,0 +1,744 @@
+/* Naruto Demo - Custom Styles */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;700&display=swap');
+
+/* Root Variables - Naruto Color Palette */
+:root {
+  --naruto-orange: #ff6b35;
+  --naruto-blue: #4285f4;
+  --naruto-dark-blue: #1a237e;
+  --naruto-black: #0d1117;
+  --naruto-gray: #21262d;
+  --naruto-light-gray: #30363d;
+  --shadow-glow: 0 0 20px rgba(255, 107, 53, 0.3);
+  --shadow-blue-glow: 0 0 20px rgba(66, 133, 244, 0.3);
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Fonts */
+.naruto-font {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+}
+
+.naruto-title {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Body Styles */
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  background: linear-gradient(135deg, #0d1117 0%, #21262d 50%, #0d1117 100%);
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--naruto-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--naruto-orange), var(--naruto-blue));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #ff8c42, #5a95ff);
+}
+
+/* Navigation Styles */
+nav {
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 107, 53, 0.2);
+  transition: all 0.3s ease;
+}
+
+.ninja-link {
+  position: relative;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.ninja-link:hover {
+  background: rgba(255, 107, 53, 0.1);
+  box-shadow: var(--shadow-glow);
+}
+
+.ninja-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to right, var(--naruto-orange), var(--naruto-blue));
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.ninja-link:hover::after {
+  width: 100%;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, 
+    rgba(13, 17, 23, 0.9) 0%, 
+    rgba(255, 107, 53, 0.3) 30%, 
+    rgba(66, 133, 244, 0.3) 70%, 
+    rgba(13, 17, 23, 0.9) 100%
+  ),
+  radial-gradient(circle at 30% 20%, rgba(255, 107, 53, 0.2) 0%, transparent 50%),
+  radial-gradient(circle at 70% 80%, rgba(66, 133, 244, 0.2) 0%, transparent 50%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,107,53,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+  opacity: 0.3;
+}
+
+.glow-text {
+  text-shadow: 
+    0 0 10px rgba(255, 107, 53, 0.5),
+    0 0 20px rgba(255, 107, 53, 0.3),
+    0 0 30px rgba(255, 107, 53, 0.2);
+  background: linear-gradient(45deg, #ff6b35, #4285f4, #ff6b35);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 3s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Ninja Stars Animation */
+.ninja-stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  font-size: 1.5rem;
+  opacity: 0.7;
+  animation: float 6s ease-in-out infinite;
+}
+
+.star-1 {
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.star-2 {
+  top: 60%;
+  right: 15%;
+  animation-delay: 2s;
+}
+
+.star-3 {
+  bottom: 30%;
+  left: 20%;
+  animation-delay: 4s;
+}
+
+.star-4 {
+  top: 40%;
+  right: 30%;
+  animation-delay: 1s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-20px) rotate(120deg);
+  }
+  66% {
+    transform: translateY(10px) rotate(240deg);
+  }
+}
+
+/* Button Styles */
+.ninja-button {
+  position: relative;
+  overflow: hidden;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.ninja-button:hover {
+  border-color: currentColor;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.ninja-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.ninja-button:hover::before {
+  left: 100%;
+}
+
+/* Character Cards */
+.character-card {
+  border: 2px solid transparent;
+  background: linear-gradient(var(--naruto-gray), var(--naruto-gray)) padding-box,
+              linear-gradient(45deg, var(--naruto-orange), var(--naruto-blue)) border-box;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.character-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, var(--naruto-orange), var(--naruto-blue), var(--naruto-orange));
+  background-size: 300% 300%;
+  z-index: -1;
+  border-radius: inherit;
+  animation: borderGlow 3s ease-in-out infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.character-card:hover::before {
+  opacity: 1;
+}
+
+@keyframes borderGlow {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Technique Cards */
+.technique-card {
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.technique-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.technique-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+  pointer-events: none;
+}
+
+.technique-card:hover::after {
+  transform: translateX(100%);
+}
+
+/* Village Cards */
+.village-card {
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.village-card:hover {
+  transform: scale(1.02);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Custom Animations */
+.animate-pulse-slow {
+  animation: pulseSlow 2s ease-in-out infinite;
+}
+
+@keyframes pulseSlow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 4s linear infinite;
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-bounce-slow {
+  animation: bounceSlow 2s ease-in-out infinite;
+}
+
+@keyframes bounceSlow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Particle Effects */
+.particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: var(--naruto-orange);
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
+/* Section Transitions */
+section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 1024px) {
+  .hero-section h1 {
+    font-size: 4rem !important;
+  }
+  
+  .hero-section p {
+    font-size: 1.25rem !important;
+  }
+  
+  .character-card,
+  .technique-card,
+  .village-card {
+    transform: none !important;
+  }
+  
+  .character-card:hover,
+  .technique-card:hover,
+  .village-card:hover {
+    transform: scale(1.02) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .naruto-title {
+    font-size: 2.5rem !important;
+    text-align: center;
+  }
+  
+  .hero-section h1 {
+    font-size: 3rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .hero-section p {
+    font-size: 1.1rem !important;
+    margin-bottom: 2rem !important;
+  }
+  
+  .character-card,
+  .technique-card,
+  .village-card {
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+  }
+  
+  .ninja-button {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+  
+  .star {
+    font-size: 1rem;
+  }
+  
+  .character-card .w-32.h-32 {
+    width: 6rem !important;
+    height: 6rem !important;
+  }
+  
+  .technique-card .w-24.h-24 {
+    width: 5rem !important;
+    height: 5rem !important;
+  }
+  
+  .village-card .w-32.h-32 {
+    width: 6rem !important;
+    height: 6rem !important;
+  }
+  
+  /* Navigation adjustments */
+  nav .container {
+    padding: 0 1rem;
+  }
+  
+  nav .font-bold.text-xl {
+    font-size: 1.25rem;
+  }
+  
+  /* Section spacing */
+  section {
+    padding: 4rem 0;
+  }
+  
+  .py-20 {
+    padding: 3rem 0 !important;
+  }
+  
+  .py-12 {
+    padding: 2rem 0 !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .naruto-title {
+    font-size: 2rem !important;
+    line-height: 1.2;
+  }
+  
+  .hero-section h1 {
+    font-size: 2.5rem !important;
+    line-height: 1.1;
+    margin-bottom: 1rem !important;
+  }
+  
+  .hero-section p {
+    font-size: 1rem !important;
+    margin-bottom: 1.5rem !important;
+    padding: 0 1rem;
+  }
+  
+  .hero-section .text-8xl {
+    font-size: 4rem !important;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .character-card,
+  .technique-card,
+  .village-card {
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  
+  .character-card h3,
+  .technique-card h3,
+  .village-card h3 {
+    font-size: 1.25rem !important;
+  }
+  
+  .character-card .w-32.h-32 {
+    width: 5rem !important;
+    height: 5rem !important;
+  }
+  
+  .technique-card .w-24.h-24 {
+    width: 4rem !important;
+    height: 4rem !important;
+  }
+  
+  .village-card .w-32.h-32 {
+    width: 5rem !important;
+    height: 5rem !important;
+  }
+  
+  .ninja-button {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  /* Grid adjustments */
+  .grid.md\\:grid-cols-3 {
+    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+    gap: 1rem !important;
+  }
+  
+  .grid.md\\:grid-cols-2 {
+    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+    gap: 1rem !important;
+  }
+  
+  .grid.lg\\:grid-cols-3 {
+    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+    gap: 1rem !important;
+  }
+  
+  /* Footer adjustments */
+  footer .text-4xl {
+    font-size: 2rem !important;
+  }
+  
+  footer .text-2xl {
+    font-size: 1.5rem !important;
+  }
+  
+  footer .space-x-6 {
+    gap: 1rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    min-height: 80vh;
+    padding: 2rem 0;
+  }
+  
+  .hero-section h1 {
+    font-size: 2rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .hero-section .text-8xl {
+    font-size: 3rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .hero-section p {
+    font-size: 0.9rem !important;
+    line-height: 1.5;
+  }
+  
+  .naruto-title {
+    font-size: 1.75rem !important;
+  }
+  
+  section {
+    padding: 2.5rem 0;
+  }
+  
+  .py-20 {
+    padding: 2rem 0 !important;
+  }
+  
+  .character-card,
+  .technique-card,
+  .village-card {
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .ninja-button {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.875rem;
+  }
+  
+  /* Text size adjustments */
+  .text-2xl {
+    font-size: 1.25rem !important;
+  }
+  
+  .text-xl {
+    font-size: 1.1rem !important;
+  }
+  
+  /* Mobile menu positioning */
+  #mobile-menu {
+    background: rgba(17, 24, 39, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
+    padding: 1rem;
+  }
+}
+
+/* Landscape mobile adjustments */
+@media (max-width: 768px) and (orientation: landscape) {
+  .hero-section {
+    min-height: 100vh;
+  }
+  
+  .hero-section h1 {
+    font-size: 2.5rem !important;
+  }
+  
+  .hero-section p {
+    font-size: 1rem !important;
+  }
+}
+
+/* Large screens optimization */
+@media (min-width: 1280px) {
+  .hero-section h1 {
+    font-size: 5rem !important;
+  }
+  
+  .hero-section p {
+    font-size: 1.5rem !important;
+  }
+  
+  .character-card,
+  .technique-card,
+  .village-card {
+    padding: 2rem;
+  }
+  
+  .container {
+    max-width: 1200px;
+  }
+}
+
+/* Ultra-wide screens */
+@media (min-width: 1536px) {
+  .hero-section h1 {
+    font-size: 6rem !important;
+  }
+  
+  .container {
+    max-width: 1400px;
+  }
+}
+
+/* Loading Animation */
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--naruto-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.loading-screen.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid transparent;
+  border-top: 3px solid var(--naruto-orange);
+  border-right: 3px solid var(--naruto-blue);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Parallax Effect */
+.parallax-bg {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Custom Selection */
+::selection {
+  background: var(--naruto-orange);
+  color: white;
+}
+
+::-moz-selection {
+  background: var(--naruto-orange);
+  color: white;
+}
+
+/* Focus Styles */
+button:focus,
+a:focus {
+  outline: 2px solid var(--naruto-orange);
+  outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+  .ninja-stars,
+  nav,
+  footer {
+    display: none;
+  }
+  
+  section {
+    page-break-inside: avoid;
+  }
+}
